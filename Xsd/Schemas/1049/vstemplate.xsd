@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="VSTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TemplateData">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="TemplateData" _locComment="" -->Данные для отображения шаблона в диалоговом окне "Создание проекта"
+      </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="Name" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateData.Name" _locComment="" -->Строка с именем шаблона, которое будет отображаться в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Description" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Description" _locComment="" -->Строка с описанием шаблона, которое будет отображаться в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Icon" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Icon" _locComment="" -->Имя файла значка шаблона, который будет отображаться в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="PreviewImage" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="PreviewImage" _locComment="" -->Задает имя файла изображения для образца, который будет отображаться в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProjectType" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProjectType" _locComment="" -->Строка с типом проекта шаблона. Например: CSharp, VisualBasic или Web
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProjectSubType" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProjectSubType" _locComment="" -->Строка (если она имеется) с подтипом проекта шаблона. Обозначает совокупную систему проекта для шаблона элемента. Возможные значения: SmartDevice-NETCFv1, SmartDevice-NETCFv2. Возможные значения ProjectSubType для веб-проектов: CSharp и VisualBasic.
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="TemplateID" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateID" _locComment="" -->Строка с необязательным уникальным идентификатором шаблона. Если значение не указано, в качестве идентификатора шаблона будет использоваться его имя.
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="TemplateGroupID" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateGroupID" _locComment="" -->Строка с необязательным уникальным идентификатором группы шаблона. Это значение требуется в некоторых типах проектов для отображения шаблона элемента в диалоговом окне "Добавление нового элемента".
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SortOrder" type="xs:integer" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SortOrder" _locComment="" -->Очередность отображения шаблона в диалоговом окне "Создание проекта".
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CreateNewFolder" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="CreateNewFolder" _locComment="" -->Признак создания новой папки для проекта. Значение по умолчанию и если не указано: FALSE.
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="DefaultName" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="DefaultName" _locComment="" -->Строка для отображения в поле "Имя" в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProvideDefaultName" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProvideDefaultName" _locComment="" -->Строка для отображения в поле "Имя" в диалоговом окне "Создание проекта" или "Добавление нового элемента"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="PromptForSaveOnCreation" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="PromptForSaveOnCreation" _locComment="" -->Признак сохранения проекта при создании. Поддерживается не всеми типами проектов; в этом случае может не задаваться
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="EnableLocationBrowseButton" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="EnableLocationBrowseButton" _locComment="" -->Разрешение пользователю на поиск другого каталога для создания решения
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="EnableEditOfLocationField" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="EnableEditOfLocationField" _locComment="" -->Разрешение пользователю на изменение поля "Расположение"
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>  
+              <xs:element name="Hidden" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Hidden" _locComment="" -->Признак скрытия шаблона в диалоговом окне "Создание проекта" или "Добавление нового элемента". Если он задан, никакие другие элементы в теге TemplateData не требуются. В случае неправильного формата шаблона или какой-либо другой ошибки сведения об ошибке в журнал не заносятся
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="LocationFieldMRUPrefix" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="LocationFieldMRUPrefix" _locComment="" -->Список последних использовавшихся путей в диалоговом окне "Создание проекта" или "Создание элемента". Этот тег предназначен для шаблонов внутренней разработки (VS или VSIP).
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="NumberOfParentCategoriesToRollUp" type="xs:integer" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="NumberOfParentCategoriesToRollUp" _locComment="" -->Отображение шаблонов одновременно в родительских и текущих категориях. Этот тег предназначен для шаблонов внутренней разработки (VS или VSIP). Не учитывается в пользовательских шаблонах
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CreateInPlace" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="CreateInPlace" _locComment="" -->Создание файлов проектов непосредственно в конечном расположении.
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="BuildOnLoad" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="BuildOnLoad" _locComment="" -->Построение решения непосредственно после создания
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ShowByDefault" minOccurs="0">
+               <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ShowByDefault" _locComment="" -->Если задано значение false, шаблон будет отображаться только с указанным TemplateGroupID. Значение по умолчанию и если не указано: true.
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="LocationField" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="LocationField" _locComment="" -->Состояние поля "Расположение": включено, отключено или скрыто.
+         </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Enabled"/>
+                    <xs:enumeration value="Disabled"/>
+                    <xs:enumeration value="Hidden"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupportsMasterPage" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsMasterPage" _locComment="" -->Поддерживает шаблон наличие главной страницы или нет (для веб-приложений)
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SupportsCodeSeparation" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsCodeSeparation" _locComment="" -->Поддерживает шаблон разделение кода или нет (для веб-приложений)
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SupportsLanguageDropDown" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsLanguageDropDown" _locComment="" -->Является ли шаблон многоязыковым и должен ли отображаться раскрывающийся список языков (для веб-приложений)
+         </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="RequiredFrameworkVersion" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="RequiredFrameworkVersion" _locComment="" -->Задает минимальную версию .Net Framework требуемую шаблоном.
+         </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="2.0"/>
+                    <xs:enumeration value="3.0"/>
+                    <xs:enumeration value="3.5"/>
+                    <xs:enumeration value="4.0"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FrameworkVersion" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="FrameworkVersion" _locComment="" -->Не рекомендуется. Рекомендуется использовать RequiredFrameworkVersion
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="MaxFrameworkVersion" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="MaxFrameworkVersion" _locComment="" -->Задает максимальную версию .Net Framework, поддерживаемую шаблоном.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="2.0"/>
+                    <xs:enumeration value="3.0"/>
+                    <xs:enumeration value="3.5"/>
+                    <xs:enumeration value="4.0"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomDataSignature" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="CustomDataSignature" _locComment="" -->Задает текстовую сигнатуру для поиска customdata
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TemplateContent">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="TemplateContent" _locComment="" -->Информационное наполнение для шаблона
+      </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice>
+                <xs:element name="ProjectCollection">
+                  <xs:annotation>
+                    <xs:documentation>
+                      <!-- _locID_text="ProjectCollection" _locComment="" -->Набор ссылок на другие шаблоны. Используется для многопроектных шаблонов
+          </xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element ref="ProjectTemplateLink" minOccurs="0" maxOccurs="unbounded"/>
+                      <xs:element ref="SolutionFolder" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="Project">
+                  <xs:annotation>
+                    <xs:documentation>
+                      <!-- _locID_text="TemplateContent.Project" _locComment="" -->Описание содержимого шаблона проекта
+          </xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element ref="Folder" minOccurs="0" maxOccurs="unbounded"/>
+                      <xs:element ref="ProjectItem" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                    <xs:attribute name="File" type="xs:string" use="required">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.File" _locComment="" -->Имя файла проекта
+            </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.TargetFileName" _locComment="" -->Если значение задано, оно будет заменять имя файла, определяемое атрибутом File            
+            </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.ReplaceParameters" _locComment="" -->Если задано значение true для какого-либо артефакта в шаблоне, мастер шаблонов будет выполнять подстановку параметров. Формат для параметров: $[параметр]$
+            </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                  </xs:complexType>
+                </xs:element>
+                <xs:sequence>
+                  <xs:element name="References" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!-- _locID_text="TemplateContent.References" _locComment=""-->Ссылки, которые должны быть добавлены в проект при создании элемента
+           </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Reference" minOccurs="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <!-- _locID_text="TemplateContent.Reference" _locComment=""-->Ссылки для добавления в проект
+              </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Assembly" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <!-- _locID_text="TemplateContent.Assembly" _locComment=""-->Требуется, если указана ссылка на элемент. Этот тег поддерживает ссылки простым текстом и на строгие имена сборок
+                 </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ProjectItem" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!-- _locID_text="ProjectItem" _locComment="" -->Описание элемента проекта
+           </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="SubType" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.SubType" _locComment=""-->Подтип для элемента в файле проекта. Используется для многофайловых шаблонов элементов, когда элемент имеет тег SubType, в котором указан режим его открытия в редакторе.
+               </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="CustomTool" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.CustomTool" _locComment=""-->Пользовательский инструмент для элемента в файле проекта.
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="ItemType" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.ItemType" _locComment=""-->Тип элемента в файле проекта.
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.ReplaceParameters" _locComment="" -->Если задано значение true, мастер шаблонов будет выполнять подстановку параметров. Формат для параметров: $[параметр]$
+               </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.TargetFileName" _locComment="" -->Если значение задано, оно будет заменять имя дискового файла для элемента проекта 
+               </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:choice>
+              <xs:element name="CustomParameters" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateContent.CustomParameters" _locComment="" -->Настраиваемые параметры, которые должны быть переданы в мастер шаблонов, когда он запускается для выполнения подстановки параметров.
+         </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CustomParameter" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.CustomParameter" _locComment="" -->Настраиваемый параметр (пара имя-значение) для передачи в мастер
+            </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Name" type="xs:string" use="required"/>
+                        <xs:attribute name="Value" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WizardExtension" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="WizardExtension" _locComment="" -->Настраиваемое содержимое мастера для выполнения в момент создания проекта
+      </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Assembly" maxOccurs="unbounded"/>
+              <xs:element name="FullClassName" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WizardData" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Type" type="xs:string" use="required"/>
+      <xs:attribute name="Version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!--The following are reference elements and complex types which are referenced in the main XSD-->
+  <xs:element name="ProjectTemplateLink">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="ProjectTemplateLink" _locComment="" -->Ссылка на другой шаблон проекта (файл .vstemplate) для использования в наборе
+   </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="ProjectName" type="xs:string" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectTemplateLink.ProjectName" _locComment="" -->Имя проекта для включения в качестве ссылки
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolutionFolder">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="SolutionFolder" _locComment="" -->Задание структуры папки решения в файле .vstemplate. Если значение задано, мастер проектов будет создавать папку на диске, структура которой копирует структуру папки решения.
+   </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProjectTemplateLink" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="SolutionFolder" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:attribute name="Name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProjectItem">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="ProjectItem" _locComment="" -->Элемент в проекте
+   </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectItem.TargetFileName" _locComment="" -->Конечное имя файла для файла в проекте
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectItem.ReplaceParameters2" _locComment="" -->Если задано значение true, мастер шаблонов будет выполнять подстановку параметров. Формат для параметров: $[параметр]$
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInEditor" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInEditor" _locComment="" -->Может использоваться для открытия файлов в соответствующих редакторах VS
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenOrder" type="xs:int" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenOrder" _locComment="" -->Порядок, в котором файлы должны открываться при использовании тега OpenInEditor
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInWebBrowser" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInWebBrowser" _locComment="" -->Может использоваться для открытия файлов HTML и текстовых файлов, являющихся локальными по отношению к данному проекту. Ни один из следующих вариантов не поддерживается в OpenInWebBrowser: открытие файлов, не являющихся файлами HTML или текстовыми, поддержка OpenOrder, открытие внешних веб-узлов (http://адрес).
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInHelpBrowser" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInHelpBrowser" _locComment="" -->Может использоваться для открытия файлов HTML и текстовых файлов, являющихся локальными по отношению к данному проекту. Ни один из следующих вариантов не поддерживается в OpenInHelpBrowser: открытие файлов, не являющихся файлами HTML или текстовыми, открытие внешних веб-узлов (http://адрес). Если значение задано, теги OpenInEditor и OpenOrder не будут учитываться.
+       </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Folder">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="Folder" _locComment="" -->Этот элемент может быть использован для задания папки проекта
+   </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProjectItem" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Folder" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:attribute name="Name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            <!-- _locID_text="Folder.Name" _locComment="" -->Имя папки
+     </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TargetFolderName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <!-- _locID_text="Folder.TargetFolderName" _locComment="" -->Конечное имя для папки
+     </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NameDescriptionIcon">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Package" type="xs:string" use="optional"/>
+        <xs:attribute name="ID" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

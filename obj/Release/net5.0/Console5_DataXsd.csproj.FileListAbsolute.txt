@@ -1,0 +1,16 @@
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.exe
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.deps.json
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.runtimeconfig.json
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.runtimeconfig.dev.json
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.dll
+D:\NetProjects\Console5_DataXsd\bin\Release\net5.0\Console5_DataXsd.pdb
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.csproj.AssemblyReference.cache
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.AssemblyInfoInputs.cache
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.AssemblyInfo.cs
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.csproj.CoreCompileInputs.cache
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.dll
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\refint\Console5_DataXsd.dll
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.pdb
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\Console5_DataXsd.genruntimeconfig.cache
+D:\NetProjects\Console5_DataXsd\obj\Release\net5.0\ref\Console5_DataXsd.dll

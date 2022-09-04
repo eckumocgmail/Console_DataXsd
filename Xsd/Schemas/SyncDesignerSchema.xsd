@@ -1,0 +1,1225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="SyncDesignerSchema" targetNamespace="http://schemas.microsoft.com/dsltools/SyncDesigner" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/SyncDesigner" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- SyncDesignerSurface -->
+  <xsd:element name="syncDesignerSurface" type="SyncDesignerSurface" />
+  <xsd:complexType name="SyncDesignerSurface">
+    <xsd:annotation>
+      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: SyncDesignerSurfaceHasSyncAdapter -->
+      <xsd:element name="syncAdapters" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncAdapter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncAdapter">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncAdapter needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapter" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncTable -->
+      <xsd:element name="syncTables" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncTable</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncTable">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncTable needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncTable" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncGroup -->
+      <xsd:element name="syncGroups" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncGroup</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncGroup">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncGroup needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncGroup" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasClientSyncProvider -->
+      <xsd:element name="clientSyncProvider" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncDesignerSurfaceHasClientSyncProvider</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1" >
+              <xsd:element ref="syncDesignerSurfaceHasClientSyncProvider">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasClientSyncProvider needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="clientSyncProvider" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasServerSyncProvider -->
+      <xsd:element name="serverSyncProvider" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncDesignerSurfaceHasServerSyncProvider</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1" >
+              <xsd:element ref="syncDesignerSurfaceHasServerSyncProvider">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasServerSyncProvider needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="serverSyncProvider" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncAgent -->
+      <xsd:element name="syncAgent" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncDesignerSurfaceHasSyncAgent</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncAgent">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncAgent needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAgent" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncAdapterCommand -->
+      <xsd:element name="syncAdapterCommands" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncAdapterCommand</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncAdapterCommand">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncAdapterCommand needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommand" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncAdapterCommandParameter -->
+      <xsd:element name="syncAdapterCommandParameters" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncAdapterCommandParameter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncAdapterCommandParameter">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncAdapterCommandParameter needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommandParameter" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncDesignerSurfaceHasSyncConnection -->
+      <xsd:element name="syncConnections" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncDesignerSurfaceHasSyncConnection</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncDesignerSurfaceHasSyncConnection">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncDesignerSurfaceHasSyncConnection needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncConnection" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- dslVersion -->
+    <xsd:attribute name="dslVersion" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: ParentDesignerName -->
+    <xsd:attribute name="parentDesignerName" type="xsd:string" />
+    <!-- Property: CodeGenerationMode -->
+    <xsd:attribute name="codeGenerationMode" type="xsd:string" />
+    <!-- Property: SynchronizeInOneTransaction -->
+    <xsd:attribute name="synchronizeInOneTransaction" type="xsd:boolean" />
+    <!-- Property: ClientFileLocation -->
+    <xsd:attribute name="clientFileLocation" type="xsd:string" />
+    <!-- Property: ServerFileLocation -->
+    <xsd:attribute name="serverFileLocation" type="xsd:string" />
+    <!-- Property: IsRootSyncDesigner -->
+    <xsd:attribute name="isRootSyncDesigner" type="xsd:boolean" />
+    <!-- Property: RootSyncDesignerHintPath -->
+    <xsd:attribute name="rootSyncDesignerHintPath" type="xsd:string" />
+    <!-- Property: RootSyncDesignerShouldGenerateCode -->
+    <xsd:attribute name="rootSyncDesignerShouldGenerateCode" type="xsd:boolean" />
+    <!-- Property: ClientFileHintPath -->
+    <xsd:attribute name="clientFileHintPath" type="xsd:string" />
+    <!-- Property: ServerFileHintPath -->
+    <xsd:attribute name="serverFileHintPath" type="xsd:string" />
+    <!-- Property: RootSyncDesignerCodeGenerationMode -->
+    <xsd:attribute name="rootSyncDesignerCodeGenerationMode" type="xsd:string" />
+    <!-- Property: IsClientSyncDesigner -->
+    <xsd:attribute name="isClientSyncDesigner" type="xsd:boolean" />
+    <!-- Property: IsServerSyncDesigner -->
+    <xsd:attribute name="isServerSyncDesigner" type="xsd:boolean" />
+    <!-- Property: ChangeTrackingType -->
+    <xsd:attribute name="changeTrackingType" type="ChangeTrackingType" />
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurface Moniker -->
+  <xsd:element name="syncDesignerSurfaceMoniker" type="SyncDesignerSurfaceMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurface instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="Id" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncAdapter -->
+  <xsd:element name="syncAdapter" type="SyncAdapter" />
+  <xsd:complexType name="SyncAdapter">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: SyncAdapterReferencesSyncAdapterCommand -->
+      <xsd:element name="syncAdapterCommands" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncAdapterReferencesSyncAdapterCommand</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncAdapterReferencesSyncAdapterCommand">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAdapterReferencesSyncAdapterCommand needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommandMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: TableName -->
+    <xsd:attribute name="tableName" type="xsd:string" />
+  </xsd:complexType>
+  
+  <!-- SyncAdapter Moniker -->
+  <xsd:element name="syncAdapterMoniker" type="SyncAdapterMoniker" />
+  <xsd:complexType name="SyncAdapterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAdapter instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncTable -->
+  <xsd:element name="syncTable" type="SyncTable" />
+  <xsd:complexType name="SyncTable">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: SyncTableReferencesSyncGroup -->
+      <xsd:element name="syncGroup" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncTableReferencesSyncGroup</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="syncTableReferencesSyncGroup">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncTableReferencesSyncGroup needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncGroupMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: SyncDirection -->
+    <xsd:attribute name="syncDirection" type="xsd:string" />
+    <!-- Property: CreationOptions -->
+    <xsd:attribute name="creationOptions" type="xsd:string" />
+    <!-- Property: TableName -->
+    <xsd:attribute name="tableName" type="xsd:string" />
+    <!-- Property: DeletedItemsTableName -->
+    <xsd:attribute name="deletedItemsTableName" type="xsd:string" />
+    <!-- Property: CreatedDateColumnName -->
+    <xsd:attribute name="createdDateColumnName" type="xsd:string" />
+    <!-- Property: LastEditDateColumnName -->
+    <xsd:attribute name="lastEditDateColumnName" type="xsd:string" />
+    <!-- Property: FullTableName -->
+    <xsd:attribute name="fullTableName" type="xsd:string" />
+    <!-- Property: DeletedDateColumnName -->
+    <xsd:attribute name="deletedDateColumnName" type="xsd:string" />
+    <!-- Property: TransactionIndex -->
+    <xsd:attribute name="transactionIndex" type="xsd:integer" />
+  </xsd:complexType>
+  
+  <!-- SyncTable Moniker -->
+  <xsd:element name="syncTableMoniker" type="SyncTableMoniker" />
+  <xsd:complexType name="SyncTableMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncTable instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncGroup -->
+  <xsd:element name="syncGroup" type="SyncGroup" />
+  <xsd:complexType name="SyncGroup">
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+  </xsd:complexType>
+  
+  <!-- SyncGroup Moniker -->
+  <xsd:element name="syncGroupMoniker" type="SyncGroupMoniker" />
+  <xsd:complexType name="SyncGroupMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncGroup instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- ClientSyncProvider -->
+  <xsd:element name="clientSyncProvider" type="ClientSyncProvider" />
+  <xsd:complexType name="ClientSyncProvider">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: ClientSyncProviderReferencesSyncConnection -->
+      <xsd:element name="syncConnection" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of ClientSyncProviderReferencesSyncConnection</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="clientSyncProviderReferencesSyncConnection">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from ClientSyncProviderReferencesSyncConnection needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncConnectionMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+  </xsd:complexType>
+  
+  <!-- ClientSyncProvider Moniker -->
+  <xsd:element name="clientSyncProviderMoniker" type="ClientSyncProviderMoniker" />
+  <xsd:complexType name="ClientSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClientSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- ServerSyncProvider -->
+  <xsd:element name="serverSyncProvider" type="ServerSyncProvider" />
+  <xsd:complexType name="ServerSyncProvider">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: DbServerSyncProviderReferencesSyncAdapter -->
+      <xsd:element name="syncAdapters" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of DbServerSyncProviderReferencesSyncAdapter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="dbServerSyncProviderReferencesSyncAdapter">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from DbServerSyncProviderReferencesSyncAdapter needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: ServerSyncProviderReferencesSyncConnection -->
+      <xsd:element name="syncConnection" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of ServerSyncProviderReferencesSyncConnection</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="serverSyncProviderReferencesSyncConnection">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from ServerSyncProviderReferencesSyncConnection needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncConnectionMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: ServerSyncProviderReferencesSyncAdapterCommand -->
+      <xsd:element name="selectNewAnchorCommand" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of ServerSyncProviderReferencesSyncAdapterCommand</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="serverSyncProviderReferencesSyncAdapterCommand">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from ServerSyncProviderReferencesSyncAdapterCommand needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommandMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+  </xsd:complexType>
+  
+  <!-- ServerSyncProvider Moniker -->
+  <xsd:element name="serverSyncProviderMoniker" type="ServerSyncProviderMoniker" />
+  <xsd:complexType name="ServerSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ServerSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncAgent -->
+  <xsd:element name="syncAgent" type="SyncAgent" />
+  <xsd:complexType name="SyncAgent">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: SyncAgentReferencesServerSyncProvider -->
+      <xsd:element name="serverSyncProvider" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncAgentReferencesServerSyncProvider</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="syncAgentReferencesServerSyncProvider">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAgentReferencesServerSyncProvider needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="serverSyncProviderMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncAgentReferencesClientSyncProvider -->
+      <xsd:element name="clientSyncProvider" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instance of SyncAgentReferencesClientSyncProvider</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="1" >
+              <xsd:element ref="syncAgentReferencesClientSyncProvider">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAgentReferencesClientSyncProvider needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="clientSyncProviderMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncAgentReferencesSyncTable -->
+      <xsd:element name="syncTables" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncAgentReferencesSyncTable</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncAgentReferencesSyncTable">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAgentReferencesSyncTable needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncTableMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- Relationship: SyncAgentReferencesSyncAdapterCommandParameter -->
+      <xsd:element name="customParameters" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncAgentReferencesSyncAdapterCommandParameter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncAgentReferencesSyncAdapterCommandParameter">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAgentReferencesSyncAdapterCommandParameter needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommandParameterMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: SynchronizeInOneTransaction -->
+    <xsd:attribute name="synchronizeInOneTransaction" type="xsd:boolean" />
+  </xsd:complexType>
+  
+  <!-- SyncAgent Moniker -->
+  <xsd:element name="syncAgentMoniker" type="SyncAgentMoniker" />
+  <xsd:complexType name="SyncAgentMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAgent instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommand -->
+  <xsd:element name="syncAdapterCommand" type="SyncAdapterCommand" />
+  <xsd:complexType name="SyncAdapterCommand">
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Relationship: SyncAdapterCommandReferencesSyncAdapterCommandParameter -->
+      <xsd:element name="syncAdapterCommandParameters" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Instances of SyncAdapterCommandReferencesSyncAdapterCommandParameter</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+              <xsd:element ref="syncAdapterCommandReferencesSyncAdapterCommandParameter">
+                <xsd:annotation>
+                  <xsd:documentation>[Relationship deriving from SyncAdapterCommandReferencesSyncAdapterCommandParameter needs to be serialized in full-form]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="syncAdapterCommandParameterMoniker" >
+                <xsd:annotation>
+                  <xsd:documentation>[Target role-player]</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: CommandText -->
+    <xsd:attribute name="commandText" type="xsd:string" />
+    <!-- Property: CommandType -->
+    <xsd:attribute name="commandType" type="xsd:string" />
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: CommandKind -->
+    <xsd:attribute name="commandKind" type="xsd:string" />
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommand Moniker -->
+  <xsd:element name="syncAdapterCommandMoniker" type="SyncAdapterCommandMoniker" />
+  <xsd:complexType name="SyncAdapterCommandMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAdapterCommand instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommandParameter -->
+  <xsd:element name="syncAdapterCommandParameter" type="SyncAdapterCommandParameter" />
+  <xsd:complexType name="SyncAdapterCommandParameter">
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: ParameterType -->
+    <xsd:attribute name="parameterType" type="xsd:string" />
+    <!-- Property: ParameterName -->
+    <xsd:attribute name="parameterName" type="xsd:string" />
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: ParameterDirection -->
+    <xsd:attribute name="parameterDirection" type="xsd:string" />
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommandParameter Moniker -->
+  <xsd:element name="syncAdapterCommandParameterMoniker" type="SyncAdapterCommandParameterMoniker" />
+  <xsd:complexType name="SyncAdapterCommandParameterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAdapterCommandParameter instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncConnection -->
+  <xsd:element name="syncConnection" type="SyncConnection" />
+  <xsd:complexType name="SyncConnection">
+    <!-- Id -->
+    <xsd:attribute name="Id" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <!-- Property: ConnectionString -->
+    <xsd:attribute name="connectionString" type="xsd:string" />
+    <!-- Property: ProviderInvariantName -->
+    <xsd:attribute name="providerInvariantName" type="xsd:string" />
+    <!-- Property: Name -->
+    <xsd:attribute name="name" type="xsd:string" use="required" />
+    <!-- Property: ConnectionName -->
+    <xsd:attribute name="connectionName" type="xsd:string" />
+    <!-- Property: ConnectionDisplayString -->
+    <xsd:attribute name="connectionDisplayString" type="xsd:string" />
+    <!-- Property: IsAppSettings -->
+    <xsd:attribute name="isAppSettings" type="xsd:boolean" />
+    <!-- Property: AppSettingsObjectName -->
+    <xsd:attribute name="appSettingsObjectName" type="xsd:string" />
+    <!-- Property: AppSettingsPropertyName -->
+    <xsd:attribute name="appSettingsPropertyName" type="xsd:string" />
+    <!-- Property: AppSettingsPropertyReference -->
+    <xsd:attribute name="appSettingsPropertyReference" type="xsd:string" />
+  </xsd:complexType>
+  
+  <!-- SyncConnection Moniker -->
+  <xsd:element name="syncConnectionMoniker" type="SyncConnectionMoniker" />
+  <xsd:complexType name="SyncConnectionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncConnection instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:string" >
+      <xsd:annotation>
+        <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapter -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapter" abstract="true" type="SyncDesignerSurfaceHasSyncAdapter" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapter" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapter -->
+      <xsd:element ref="syncAdapter" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapter Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapterMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncAdapterMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncAdapter instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncTable -->
+  <xsd:element name="syncDesignerSurfaceHasSyncTable" abstract="true" type="SyncDesignerSurfaceHasSyncTable" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncTable" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncTable -->
+      <xsd:element ref="syncTable" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncTable Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncTableMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncTableMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncTableMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncTable instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncGroup -->
+  <xsd:element name="syncDesignerSurfaceHasSyncGroup" abstract="true" type="SyncDesignerSurfaceHasSyncGroup" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncGroup" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncGroup -->
+      <xsd:element ref="syncGroup" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncGroup Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncGroupMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncGroupMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncGroupMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncGroup instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasClientSyncProvider -->
+  <xsd:element name="syncDesignerSurfaceHasClientSyncProvider" abstract="true" type="SyncDesignerSurfaceHasClientSyncProvider" />
+  <xsd:complexType name="SyncDesignerSurfaceHasClientSyncProvider" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end ClientSyncProvider -->
+      <xsd:element ref="clientSyncProvider" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasClientSyncProvider Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasClientSyncProviderMoniker" abstract="true" type="SyncDesignerSurfaceHasClientSyncProviderMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasClientSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasClientSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasServerSyncProvider -->
+  <xsd:element name="syncDesignerSurfaceHasServerSyncProvider" abstract="true" type="SyncDesignerSurfaceHasServerSyncProvider" />
+  <xsd:complexType name="SyncDesignerSurfaceHasServerSyncProvider" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end ServerSyncProvider -->
+      <xsd:element ref="serverSyncProvider" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasServerSyncProvider Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasServerSyncProviderMoniker" abstract="true" type="SyncDesignerSurfaceHasServerSyncProviderMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasServerSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasServerSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAgent -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAgent" abstract="true" type="SyncDesignerSurfaceHasSyncAgent" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAgent" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAgent -->
+      <xsd:element ref="syncAgent" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAgent Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAgentMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncAgentMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAgentMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncAgent instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesServerSyncProvider -->
+  <xsd:element name="syncAgentReferencesServerSyncProvider" abstract="true" type="SyncAgentReferencesServerSyncProvider" />
+  <xsd:complexType name="SyncAgentReferencesServerSyncProvider" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end ServerSyncProvider -->
+      <xsd:element ref="serverSyncProviderMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesServerSyncProvider Moniker -->
+  <xsd:element name="syncAgentReferencesServerSyncProviderMoniker" abstract="true" type="SyncAgentReferencesServerSyncProviderMoniker" />
+  <xsd:complexType name="SyncAgentReferencesServerSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAgentReferencesServerSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesClientSyncProvider -->
+  <xsd:element name="syncAgentReferencesClientSyncProvider" abstract="true" type="SyncAgentReferencesClientSyncProvider" />
+  <xsd:complexType name="SyncAgentReferencesClientSyncProvider" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end ClientSyncProvider -->
+      <xsd:element ref="clientSyncProviderMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesClientSyncProvider Moniker -->
+  <xsd:element name="syncAgentReferencesClientSyncProviderMoniker" abstract="true" type="SyncAgentReferencesClientSyncProviderMoniker" />
+  <xsd:complexType name="SyncAgentReferencesClientSyncProviderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAgentReferencesClientSyncProvider instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesSyncTable -->
+  <xsd:element name="syncAgentReferencesSyncTable" abstract="true" type="SyncAgentReferencesSyncTable" />
+  <xsd:complexType name="SyncAgentReferencesSyncTable" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncTable -->
+      <xsd:element ref="syncTableMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesSyncTable Moniker -->
+  <xsd:element name="syncAgentReferencesSyncTableMoniker" abstract="true" type="SyncAgentReferencesSyncTableMoniker" />
+  <xsd:complexType name="SyncAgentReferencesSyncTableMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAgentReferencesSyncTable instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- DbServerSyncProviderReferencesSyncAdapter -->
+  <xsd:element name="dbServerSyncProviderReferencesSyncAdapter" abstract="true" type="DbServerSyncProviderReferencesSyncAdapter" />
+  <xsd:complexType name="DbServerSyncProviderReferencesSyncAdapter" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapter -->
+      <xsd:element ref="syncAdapterMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- DbServerSyncProviderReferencesSyncAdapter Moniker -->
+  <xsd:element name="dbServerSyncProviderReferencesSyncAdapterMoniker" abstract="true" type="DbServerSyncProviderReferencesSyncAdapterMoniker" />
+  <xsd:complexType name="DbServerSyncProviderReferencesSyncAdapterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DbServerSyncProviderReferencesSyncAdapter instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncTableReferencesSyncGroup -->
+  <xsd:element name="syncTableReferencesSyncGroup" abstract="true" type="SyncTableReferencesSyncGroup" />
+  <xsd:complexType name="SyncTableReferencesSyncGroup" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncGroup -->
+      <xsd:element ref="syncGroupMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncTableReferencesSyncGroup Moniker -->
+  <xsd:element name="syncTableReferencesSyncGroupMoniker" abstract="true" type="SyncTableReferencesSyncGroupMoniker" />
+  <xsd:complexType name="SyncTableReferencesSyncGroupMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncTableReferencesSyncGroup instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapterCommand -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapterCommand" abstract="true" type="SyncDesignerSurfaceHasSyncAdapterCommand" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapterCommand" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommand -->
+      <xsd:element ref="syncAdapterCommand" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapterCommand Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapterCommandMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncAdapterCommandMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapterCommandMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncAdapterCommand instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapterCommandParameter -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapterCommandParameter" abstract="true" type="SyncDesignerSurfaceHasSyncAdapterCommandParameter" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapterCommandParameter" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommandParameter -->
+      <xsd:element ref="syncAdapterCommandParameter" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncAdapterCommandParameter Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncAdapterCommandParameterMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncAdapterCommandParameterMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncAdapterCommandParameterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncAdapterCommandParameter instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommandReferencesSyncAdapterCommandParameter -->
+  <xsd:element name="syncAdapterCommandReferencesSyncAdapterCommandParameter" abstract="true" type="SyncAdapterCommandReferencesSyncAdapterCommandParameter" />
+  <xsd:complexType name="SyncAdapterCommandReferencesSyncAdapterCommandParameter" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommandParameter -->
+      <xsd:element ref="syncAdapterCommandParameterMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterCommandReferencesSyncAdapterCommandParameter Moniker -->
+  <xsd:element name="syncAdapterCommandReferencesSyncAdapterCommandParameterMoniker" abstract="true" type="SyncAdapterCommandReferencesSyncAdapterCommandParameterMoniker" />
+  <xsd:complexType name="SyncAdapterCommandReferencesSyncAdapterCommandParameterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAdapterCommandReferencesSyncAdapterCommandParameter instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterReferencesSyncAdapterCommand -->
+  <xsd:element name="syncAdapterReferencesSyncAdapterCommand" abstract="true" type="SyncAdapterReferencesSyncAdapterCommand" />
+  <xsd:complexType name="SyncAdapterReferencesSyncAdapterCommand" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommand -->
+      <xsd:element ref="syncAdapterCommandMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAdapterReferencesSyncAdapterCommand Moniker -->
+  <xsd:element name="syncAdapterReferencesSyncAdapterCommandMoniker" abstract="true" type="SyncAdapterReferencesSyncAdapterCommandMoniker" />
+  <xsd:complexType name="SyncAdapterReferencesSyncAdapterCommandMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAdapterReferencesSyncAdapterCommand instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncConnection -->
+  <xsd:element name="syncDesignerSurfaceHasSyncConnection" abstract="true" type="SyncDesignerSurfaceHasSyncConnection" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncConnection" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncConnection -->
+      <xsd:element ref="syncConnection" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncDesignerSurfaceHasSyncConnection Moniker -->
+  <xsd:element name="syncDesignerSurfaceHasSyncConnectionMoniker" abstract="true" type="SyncDesignerSurfaceHasSyncConnectionMoniker" />
+  <xsd:complexType name="SyncDesignerSurfaceHasSyncConnectionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncDesignerSurfaceHasSyncConnection instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- ServerSyncProviderReferencesSyncConnection -->
+  <xsd:element name="serverSyncProviderReferencesSyncConnection" abstract="true" type="ServerSyncProviderReferencesSyncConnection" />
+  <xsd:complexType name="ServerSyncProviderReferencesSyncConnection" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncConnection -->
+      <xsd:element ref="syncConnectionMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- ServerSyncProviderReferencesSyncConnection Moniker -->
+  <xsd:element name="serverSyncProviderReferencesSyncConnectionMoniker" abstract="true" type="ServerSyncProviderReferencesSyncConnectionMoniker" />
+  <xsd:complexType name="ServerSyncProviderReferencesSyncConnectionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ServerSyncProviderReferencesSyncConnection instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- ClientSyncProviderReferencesSyncConnection -->
+  <xsd:element name="clientSyncProviderReferencesSyncConnection" abstract="true" type="ClientSyncProviderReferencesSyncConnection" />
+  <xsd:complexType name="ClientSyncProviderReferencesSyncConnection" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncConnection -->
+      <xsd:element ref="syncConnectionMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- ClientSyncProviderReferencesSyncConnection Moniker -->
+  <xsd:element name="clientSyncProviderReferencesSyncConnectionMoniker" abstract="true" type="ClientSyncProviderReferencesSyncConnectionMoniker" />
+  <xsd:complexType name="ClientSyncProviderReferencesSyncConnectionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClientSyncProviderReferencesSyncConnection instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesSyncAdapterCommandParameter -->
+  <xsd:element name="syncAgentReferencesSyncAdapterCommandParameter" abstract="true" type="SyncAgentReferencesSyncAdapterCommandParameter" />
+  <xsd:complexType name="SyncAgentReferencesSyncAdapterCommandParameter" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommandParameter -->
+      <xsd:element ref="syncAdapterCommandParameterMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- SyncAgentReferencesSyncAdapterCommandParameter Moniker -->
+  <xsd:element name="syncAgentReferencesSyncAdapterCommandParameterMoniker" abstract="true" type="SyncAgentReferencesSyncAdapterCommandParameterMoniker" />
+  <xsd:complexType name="SyncAgentReferencesSyncAdapterCommandParameterMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SyncAgentReferencesSyncAdapterCommandParameter instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- ServerSyncProviderReferencesSyncAdapterCommand -->
+  <xsd:element name="serverSyncProviderReferencesSyncAdapterCommand" abstract="true" type="ServerSyncProviderReferencesSyncAdapterCommand" />
+  <xsd:complexType name="ServerSyncProviderReferencesSyncAdapterCommand" abstract="true" >
+    <xsd:sequence minOccurs="0" maxOccurs="1">
+      <!-- Target end SyncAdapterCommand -->
+      <xsd:element ref="syncAdapterCommandMoniker" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>[Target role-player]</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- ServerSyncProviderReferencesSyncAdapterCommand Moniker -->
+  <xsd:element name="serverSyncProviderReferencesSyncAdapterCommandMoniker" abstract="true" type="ServerSyncProviderReferencesSyncAdapterCommandMoniker" />
+  <xsd:complexType name="ServerSyncProviderReferencesSyncAdapterCommandMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ServerSyncProviderReferencesSyncAdapterCommand instance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  
+  <!-- Enum ChangeTrackingType -->
+  <xsd:simpleType name="ChangeTrackingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SqlServerChangeTracking"/>
+      <xsd:enumeration value="CoupledChangeTracking"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>
+
