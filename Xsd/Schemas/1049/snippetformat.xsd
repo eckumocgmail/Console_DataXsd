@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  
+  <xs:element name="CodeSnippets" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="CodeSnippets" _locComment="" -->Группирует элементы CodeSnippet. Элемент CodeSnippets является корневым элементом фрагмента кода XML-схемы.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CodeSnippet" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodeSnippet">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="CodeSnippet" _locComment="" -->Позволяет указать заголовок и несколько фрагментов кода IntelliSense, которые можно вставлять в файлы исходного текста Visual Studio 2005.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Header" _locComment="" -->Задает общие сведения о фрагменте кода IntelliSense.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Title" _locComment="" -->
+					Задает заголовок фрагмента кода. Заголовок, хранящийся в элементе Title фрагмента кода, отображается в меню вставки фрагментов и в описании фрагмента в диспетчере фрагментов кода.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Author" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Author" _locComment="" -->
+					Задает имя автора фрагмента. В диспетчере фрагментов кода отображается имя фрагмента кода, хранящееся в элементе Author фрагмента кода.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Description" _locComment="" -->
+					Задает описательные сведения о содержимом фрагмента кода IntelliSense. Текстовое значение элемента Description предоставляет всплывающую подсказку для фрагмента кода в меню вставки фрагментов и описание фрагмента кода в диспетчере фрагментов кода.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="HelpUrl" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="HelpUrl" _locComment="" -->
+					Задает URL-адрес, на котором можно получить дополнительные сведения о фрагменте кода.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SnippetTypes" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="SnippetTypes" _locComment="" -->Группирует отдельные элементы SnippetType. Если элемент SnippetTypes отсутствует, фрагмент кода может быть вставлен в любое место кода.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="SnippetType">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="SnippetType" _locComment="" -->Задает способ вставки фрагмента кода в Visual Studio. Значение SurroundsWith позволяет разместить фрагмент кода в указанном месте кода, а значение Expansion позволяет вставить фрагмент кода в месте расположения курсора.</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:union>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string"/>
+                          </xs:simpleType>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="Expansion"/>
+                              <xs:enumeration value="SurroundsWith"/>
+                              <xs:enumeration value="Refactoring"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:union>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Keywords" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Keywords" _locComment="" -->Группирует отдельные элементы Keyword. Ключевые слова фрагментов кода используются в Visual Studio и применяются поставщиками содержимого по сети.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Keyword" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Shortcut" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Shortcut" _locComment="" -->Задает краткий текст, используемый для вставки фрагмента кода. </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Snippet">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Snippet" _locComment="" -->Задает ссылки, импортируемые элементы, объявления и код для фрагмента кода.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="References" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="References" _locComment="" -->Группирует отдельные элементы Reference.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Reference" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:choice>
+                          <xs:element name="Assembly" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Assembly" _locComment="" -->Задает имя сборки, на которую ссылается фрагмент кода. Элемент Assembly поддерживается только фрагментами кода Visual Basic. Текстовое значение элемента Assembly - это понятное имя сборки, например System.dll, или ее строгое имя, например System,Version=1.0.0.1,Culture=neutral,PublicKeyToken=9b35aa323c18d4fb1.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Url" _locComment="" -->Задает URL-адрес, предоставляющий дополнительные сведения о сборке, на которую создается ссылка.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Imports" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Imports" _locComment="" -->Группирует импортируемые элементы. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Import" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation><!-- _locID_text="Import" _locComment="" -->Задает импортируемые пространства имен, используемые фрагментом кода IntelliSense.</xs:documentation>
+						</xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+							<xs:element name="Namespace" type="xs:string">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Namespace" _locComment="" -->Задает пространство имен для фрагмента кода.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Declarations" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Declarations" _locComment="" -->Задает литералы и объекты, которые составляют части фрагмента кода, доступные для изменения.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="Literal">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="Literal" _locComment="" -->Задает литералы фрагмента кода, доступные для редактирования. Элемент Literal используется для определения замены части кода, которая полностью содержится во фрагменте, но часто определяется после ее вставки в код. Например, строки литералов, числовые значения и некоторые имена переменных должны объявляться как литералы.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                          <xs:element name="ID" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.ID" _locComment="" -->Задает уникальный идентификатор для элемента Literal или Object.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Type" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.Type" _locComment="" -->Задает тип объекта.</xs:documentation>
+                            </xs:annotation>	
+                          </xs:element>
+                          <xs:element name="ToolTip" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.ToolTip" _locComment="" -->Описывает предполагаемое значение и использование символьной константы или объекта во фрагменте кода; эти сведения отображаются Visual Studio во всплывающей подсказке во время вставки фрагмента кода в проект.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Default" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.Default" _locComment="" -->Задает значение по умолчанию литерала или объекта для фрагмента кода IntelliSense.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+							<xs:element name="Function" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Literal.Function" _locComment="" -->Задает функцию, выполняемую при получении фокуса литералом или объектом в Visual Studio.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:choice>
+                        <xs:attribute name="Editable" type="xs:boolean" use="optional">
+                          <xs:annotation>
+                            <xs:documentation><!-- _locID_text="Literal.Editable" _locComment="" -->Задает, доступен ли литерал для редактирования после вставки фрагмента кода. Используемое по умолчанию значение атрибута - true.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Object">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="Object" _locComment="" -->Задает объекты фрагмента кода, доступные для изменения.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                          <xs:element name="ID" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.ID" _locComment="" -->Задает уникальный идентификатор для элемента Literal или Object.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.Type" _locComment="" -->Обязательное. Задает тип объекта.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="ToolTip" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+								<xs:documentation><!-- _locID_text="Object.Tooltip" _locComment="" -->Описывает предполагаемое значение и использование символьной константы или объекта во фрагменте кода; эти сведения отображаются Visual Studio во всплывающей подсказке во время вставки фрагмента кода в проект.</xs:documentation>
+							</xs:annotation>
+                          </xs:element>
+                          <xs:element name="Default" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.Default" _locComment="" -->Задает используемое по умолчанию значение литерала или объекта для фрагмента кода IntelliSense. В этом тексте указывается значение по умолчанию для литерала или объекта в поле фрагмента кода, доступном для редактирования.</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+							<xs:element name="Function" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Function" _locComment="" -->
+										Задает функцию, выполняемую при получении фокуса литералом или объектом в Visual Studio.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:choice>
+                        <xs:attribute name="Editable" type="xs:boolean" use="optional">
+                        <xs:annotation>
+                            <xs:documentation><!-- _locID_text="Object.Editable" _locComment="" -->Задает, доступен ли объект для редактирования после вставки фрагмента кода. Используемое по умолчанию значение атрибута - true.</xs:documentation>
+                        </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="Code">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Code" _locComment="" -->Предоставляет контейнер для коротких блоков кода фрагмента кода IntelliSense</xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:attribute name="Language" use="required">
+                    <xs:annotation>
+                      <xs:documentation><!-- _locID_text="Language" _locComment="" -->Задает язык фрагмента кода. Возможные значения: VB, CSharp, VJSharp или XML.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:union>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string"/>
+                        </xs:simpleType>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:enumeration value="VB"/>
+                            <xs:enumeration value="CSharp"/>
+                            <xs:enumeration value="VJSharp"/>
+                            <xs:enumeration value="XML"/>
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:union>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Kind" use="optional">
+                    <xs:annotation>
+                      <xs:documentation><!-- _locID_text="Kind" _locComment="" -->Задает тип кода, содержащегося во фрагменте. Этот атрибут служит для фильтрации фрагментов на основе текущего расположения в коде</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Delimiter" type="xs:string" use="optional">
+                    <xs:annotation>
+						<xs:documentation><!-- _locID_text="Delimiter" _locComment="" --> Задает разделитель, используемый для описания литералов и объектов в коде. По умолчанию используется разделитель "$".</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+		<xs:attribute name="Format" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation><!-- _locID_text="Format" _locComment="" -->Задает версию схемы фрагмента кода. Атрибут Format должен представлять собой строку синтаксиса x.x.x, где каждый символ "x" соответствует числовому значению номера версии. В Visual Studio игнорируются фрагменты кода с нераспознанными значениями атрибута Format.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

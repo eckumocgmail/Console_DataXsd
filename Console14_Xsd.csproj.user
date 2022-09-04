@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <None Update="Schemas\1049\adrotator.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\adrotator1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\Microsoft.Build.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\MSBuild\Microsoft.Build.Commontypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\MSBuild\Microsoft.Build.Core.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\SiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\snippetformat.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\vscontent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\1049\vstemplate.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\addinschema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\catalog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\CoreDesignSurfaceDomainModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\CoreDomainModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\dataServiceMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\DataSource.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\DotNetConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\DotNetConfig20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\DotNetConfig30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\DotNetConfig35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\msxsl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\reportdefinition2008.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\reportdefinition2010.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\ServiceMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\silverlightconfig2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\soap1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\soap1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\SyncDesignerSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\vsIntellisense.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\wpfe.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\wsdl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\wsdlSoap11Binding.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\wsdlSoap12Binding.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xaml2006.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xdr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\XdrRowset.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xdrtypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xenc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xhtml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xlink.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\XMLDocumentTransform.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xmlsig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xsdschema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Schemas\xslt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+</Project>

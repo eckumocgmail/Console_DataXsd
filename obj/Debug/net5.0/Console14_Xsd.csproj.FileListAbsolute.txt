@@ -1,0 +1,16 @@
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.exe
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.deps.json
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.runtimeconfig.json
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.runtimeconfig.dev.json
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.dll
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\ref\Console14_Xsd.dll
+D:\NetProjects\Console14_Xsd\bin\Debug\net5.0\Console14_Xsd.pdb
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.csproj.AssemblyReference.cache
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.AssemblyInfoInputs.cache
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.AssemblyInfo.cs
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.csproj.CoreCompileInputs.cache
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.dll
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\ref\Console14_Xsd.dll
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.pdb
+D:\NetProjects\Console14_Xsd\obj\Debug\net5.0\Console14_Xsd.genruntimeconfig.cache

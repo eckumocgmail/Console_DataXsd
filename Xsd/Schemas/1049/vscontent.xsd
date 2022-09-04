@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This schema is used by the Visual Studio Content Installer to validate .vscontent xml files. -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/developer/vscontent/2005" xmlns="http://schemas.microsoft.com/developer/vscontent/2005" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="non-empty-string">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="VSContent">
+      <xs:annotation>
+        <xs:documentation>
+           <!-- _locID_text="VSContent" _locComment=""-->Элемент VSContent является корневым элементом XML-схемы содержимого VS.
+    </xs:documentation>
+      </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Content" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>
+                    <!-- _locID_text="Content" _locComment=""-->Элемент Content определяет каждый устанавливаемый элемент.
+        </xs:documentation>
+            </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                  <xs:element name="FileName" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _locID_text="FileName" _locComment=""-->Имя файла, соответствующего содержимому.
+             </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="DisplayName" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _locID_text="DisplayName" _locComment=""-->Имя, отображаемое пользователю при установке содержимого
+             </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Description" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _locID_text="Description" _locComment=""-->Описание, отображаемое пользователю, при установке содержимого
+             </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="FileContentType" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _locID_text="FileContentType" _locComment=""-->Тип устанавливаемого содержимого.
+             </xs:documentation>
+                      </xs:annotation>
+                           <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="Addin"><xs:annotation><xs:documentation><!-- _locID_text="Addin" _locComment=""-->Обозначает содержимое в виде надстройки.</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Code Snippet"><xs:annotation><xs:documentation><!-- _locID_text="Code Snippet" _locComment=""-->Обозначает содержимое в виде фрагмента кода IntelliSense</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="VSTemplate"><xs:annotation><xs:documentation><!-- _locID_text="VSTemplate" _locComment=""-->Обозначает содержимое в виде шаблона.</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Toolbox Control"><xs:annotation><xs:documentation><!-- _locID_text="Toolbox Control" _locComment=""-->Обозначает содержимое в виде элемента управления панели элементов.</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Macro Project"><xs:annotation><xs:documentation><!-- _locID_text="Macro Project" _locComment=""-->Обозначает содержимое в виде макропроекта.</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ContentVersion" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _locID_text="ContentVersion" _locComment=""-->Версия содержимого.
+             </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                <xs:element name="Attributes" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <!-- _locID_text="Attributes" _locComment=""-->Коллекция атрибутов, характерных для данного типа содержимого.
+            </xs:documentation>
+                    </xs:annotation>
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element maxOccurs="unbounded" name="Attribute">
+                          <xs:annotation>
+                              <xs:documentation>
+                                  <!-- _locID_text="Attribute" _locComment=""-->Пара из имени и значения, описывающая содержимое.
+               </xs:documentation>
+                          </xs:annotation>
+                        <xs:complexType>
+                            <xs:attribute name="name" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <!-- _locID_text="name" _locComment=""-->Имя атрибута, который нужно установить.
+                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="language"><xs:annotation><xs:documentation><!-- _locID_text="language" _locComment=""-->Разговорный язык для содержимого, например: en, jp</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="lang"><xs:annotation><xs:documentation><!-- _locID_text="lang" _locComment=""-->Язык программирования для содержимого, например: csharp, vjsharp, vb, xml</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="TemplateType"><xs:annotation><xs:documentation><!-- _locID_text="TemplateType" _locComment=""-->Тип шаблона, например: проект, элемент</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="ProjectType"><xs:annotation><xs:documentation><!-- _locID_text="ProjectType" _locComment=""-->Язык шаблона. Например: Visual Basic, Visual C#, Visual J#, Visual Web Developer</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="ProjectSubType"><xs:annotation><xs:documentation><!-- _locID_text="ProjectSubType" _locComment=""-->Подтип шаблона, например: Windows, база данных, Office</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="value" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <!-- _locID_text="value" _locComment=""-->
+                                    </xs:documentation>
+                                </xs:annotation>                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="csharp"><xs:annotation><xs:documentation><!-- _locID_text="csharp" _locComment=""-->Действует для фрагментов кода. Указывает на язык программирования C# для атрибута lang</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="vjsharp"><xs:annotation><xs:documentation><!-- _locID_text="jsharp" _locComment=""-->Действует для фрагментов кода. Указывает на язык программирования J# для атрибута lang</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="vb"><xs:annotation><xs:documentation><!-- _locID_text="vb" _locComment=""-->Действует для фрагментов кода. Указывает на язык программирования VB для атрибута lang</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="xml"><xs:annotation><xs:documentation><!-- _locID_text="xml" _locComment=""-->Действует для фрагментов кода. Указывает на язык программирования XML для атрибута lang</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Item"><xs:annotation><xs:documentation><!-- _locID_text="Item" _locComment=""-->Действительно для шаблонов VS. Указывает на шаблон элемента для атрибута TemplateType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Project"><xs:annotation><xs:documentation><!-- _locID_text="Project" _locComment=""-->Действительно для шаблонов VS. Определяет, что содержимое представляет собой шаблоны проекта для атрибута TemplateType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual Basic"><xs:annotation><xs:documentation><!-- _locID_text="Visual Basic" _locComment=""-->Действительно для шаблонов VS. Указывает на Visual Basic для атрибута ProjectType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual C#"><xs:annotation><xs:documentation><!-- _locID_text="Visual C#" _locComment=""-->Действительно для шаблонов VS. Указывает на Visual C# для атрибута ProjectType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual J#"><xs:annotation><xs:documentation><!-- _locID_text="Visual J#" _locComment=""-->Действительно для шаблонов VS. Указывает на Visual J# для атрибута ProjectType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual Web Developer"><xs:annotation><xs:documentation><!-- _locID_text="Visual Web Developer" _locComment=""-->Действительно для шаблонов VS. Указывает на Visual Web Developer для атрибута ProjectType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Windows"><xs:annotation><xs:documentation><!-- _locID_text="Windows" _locComment=""-->Действительно для шаблонов VS. Обозначает версию Windows для атрибута ProjectSubType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Office"><xs:annotation><xs:documentation><!-- _locID_text="Office" _locComment=""-->Действительно для шаблонов VS. Обозначает версию Windows для атрибута ProjectSubType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Smart Device"><xs:annotation><xs:documentation><!-- _locID_text="Smart Device" _locComment=""-->Действительно для шаблонов VS. Обозначает версию Windows для атрибута ProjectSubType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Database"><xs:annotation><xs:documentation><!-- _locID_text="Database" _locComment=""-->Действительно для шаблонов VS. Обозначает версию Windows для атрибута ProjectSubType</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Test"><xs:annotation><xs:documentation><!-- _locID_text="Test" _locComment=""-->Действительно для шаблонов VS. Обозначает версию Windows для атрибута ProjectSubType</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
